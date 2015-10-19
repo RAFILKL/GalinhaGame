@@ -22,7 +22,6 @@ public class Galinha : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
         
         Debug.Log(timer);
         if (timer > 3)
@@ -59,4 +58,14 @@ public class Galinha : MonoBehaviour {
 
     }
 
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("tocou2");
+        if (hit.gameObject.tag == "Parede")
+        {
+            Debug.Log("tocou");
+            Destroy(galinha);
+        }
+
+    }
 }
