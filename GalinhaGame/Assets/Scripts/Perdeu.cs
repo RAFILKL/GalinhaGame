@@ -19,6 +19,7 @@ public class Perdeu : MonoBehaviour {
 
     void OnCollisionEnter(Collision parede)
     {
+        Debug.Log("Adentrou");
         //pontos++;
         DestroyObject(galinha);
     }
