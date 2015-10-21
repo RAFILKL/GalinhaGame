@@ -17,6 +17,20 @@ public class CarroWalk : MonoBehaviour {
 
         transform.Translate(Vector3.right * speedMove);
 
+        Destroy(gameObject, 2.3f);
+
+    }
+
+
+    void OnCollisionEnter(Collision hit)
+    {
+        Debug.Log("tocou1");
+        if (hit.gameObject.name == "Galinha(Clone)")
+        {
+            Debug.Log("tocou");
+            Destroy(Galinha.cloneGalinha);
+            Galinha.pontos++;
+        }
 
     }
 

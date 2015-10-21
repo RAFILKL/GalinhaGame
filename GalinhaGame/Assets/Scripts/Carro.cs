@@ -19,21 +19,11 @@ public class Carro : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            BoxCollider cloneGalinha;
-            cloneGalinha = Instantiate(carro, spawn1.transform.position, spawn1.transform.rotation) as BoxCollider;
-        }
-        /*if (Input.GetMouseButtonDown(0))
-        {
-            BoxCollider cloneGalinha;
-            cloneGalinha = Instantiate(carro, spawn2.transform.position, spawn2.transform.rotation) as BoxCollider;
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            BoxCollider cloneGalinha;
-            cloneGalinha = Instantiate(carro, spawn3.transform.position, spawn3.transform.rotation) as BoxCollider;
-        }*/
+            //BoxCollider cloneGalinha;
+            //cloneGalinha = Instantiate(carro, spawn1.transform.position, spawn1.transform.rotation) as BoxCollider;
+        
 
     }
+
+  
 }
