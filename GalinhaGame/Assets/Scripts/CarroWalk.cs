@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CarroWalk : MonoBehaviour {
 
-      public float speedMove;
+      public float speedMove = 3f;
+	  public GameObject galinha;
 
     // Use this for initialization
     void Start()
@@ -15,9 +16,9 @@ public class CarroWalk : MonoBehaviour {
     void Update()
     {
 
-        transform.Translate(Vector3.right * speedMove);
+        transform.Translate(Vector3.forward * speedMove);
 
-        Destroy(gameObject, 2.3f);
+        Destroy(gameObject, 5f);
 
     }
 
@@ -25,7 +26,7 @@ public class CarroWalk : MonoBehaviour {
     void OnCollisionEnter(Collision hit)
     {
         Debug.Log("tocou1");
-        if (hit.gameObject.name == "Galinha(Clone)")
+        if (hit.gameObject.name == "GalinhaPrefab(Clone)")
         {
             Debug.Log("tocou");
             Destroy(Galinha.cloneGalinha);
