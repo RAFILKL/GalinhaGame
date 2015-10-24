@@ -13,8 +13,18 @@ public class GalinhaWalk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        transform.Translate(Vector3.forward * speedMove/2);
+
+		transform.Translate(Vector3.forward * speedMove/2);
 
 
     }
+
+  
+	 void OnCollisionEnter(Collision hit) {
+		Debug.Log ("Tocou");
+	   if (hit.gameObject.name == "GalinhaPrefab(Clone)") {
+			transform.Translate(Vector3.back * speedMove/2);		
+	
+	  }
+	}
 }
