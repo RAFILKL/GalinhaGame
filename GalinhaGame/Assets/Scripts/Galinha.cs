@@ -9,7 +9,6 @@ public class Galinha : MonoBehaviour {
     public GameObject galinha;
     private int rand;
     private float timer = 0;
-    private float timer2 = 0;
     public static GameObject cloneGalinha;
     public static int pontos = 0;
 
@@ -33,7 +32,7 @@ public class Galinha : MonoBehaviour {
             {
 
                     cloneGalinha = Instantiate(galinha, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
-                    Destroy(cloneGalinha, 5f);
+                    Destroy(cloneGalinha, 10f);
                     
 
                 
@@ -44,7 +43,7 @@ public class Galinha : MonoBehaviour {
             {
 
                     cloneGalinha = Instantiate(galinha, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
-                    Destroy(cloneGalinha, 5f);
+                    Destroy(cloneGalinha, 10f);
 
                 
             }
@@ -54,7 +53,7 @@ public class Galinha : MonoBehaviour {
             {
 
                     cloneGalinha = Instantiate(galinha, spawn3.transform.position, spawn3.transform.rotation) as GameObject;
-                    Destroy(cloneGalinha, 5f);
+                    Destroy(cloneGalinha, 10f);
 
                 }
             

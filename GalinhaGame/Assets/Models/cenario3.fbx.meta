@@ -1,58 +1,39 @@
 fileFormatVersion: 2
-guid: 9e045b31a40d4044cbc251a9ee742de4
-timeCreated: 1445371161
+guid: 1fb5e9a7b92b9b84c8e5c53d4da7b912
+timeCreated: 1445637302
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Camera.001
-    100002: //RootNode
-    100004: Cube
-    100006: Cube.001
-    100008: Cube.002
-    100010: Lamp
-    100012: Lamp.001
-    100014: Plane
-    100016: Plane.001
-    100018: Plane.002
-    100020: Plane.003
-    100022: Plane.004
-    400000: Camera.001
-    400002: //RootNode
-    400004: Cube
-    400006: Cube.001
-    400008: Cube.002
-    400010: Lamp
-    400012: Lamp.001
-    400014: Plane
-    400016: Plane.001
-    400018: Plane.002
-    400020: Plane.003
-    400022: Plane.004
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Cube.002
-    2300006: Plane
-    2300008: Plane.001
-    2300010: Plane.002
-    2300012: Plane.003
-    2300014: Plane.004
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Cube.002
-    3300006: Plane
-    3300008: Plane.001
-    3300010: Plane.002
-    3300012: Plane.003
-    3300014: Plane.004
-    4300000: Plane.004
-    4300002: Plane.003
-    4300004: Plane.002
-    4300006: Plane.001
-    4300008: Cube.002
-    4300010: Plane
-    4300012: Cube
-    4300014: Cube.001
+    100000: Cadeiras
+    100002: Camera.001
+    100004: Cenario
+    100006: //RootNode
+    100008: Pau das cadeiras
+    100010: Poste
+    100012: Posto ponto
+    400000: Cadeiras
+    400002: Camera.001
+    400004: Cenario
+    400006: //RootNode
+    400008: Pau das cadeiras
+    400010: Poste
+    400012: Posto ponto
+    2300000: Cadeiras
+    2300002: Cenario
+    2300004: Pau das cadeiras
+    2300006: Poste
+    2300008: Posto ponto
+    3300000: Cadeiras
+    3300002: Cenario
+    3300004: Pau das cadeiras
+    3300006: Poste
+    3300008: Posto ponto
+    4300000: Posto ponto
+    4300002: Poste
+    4300004: Cenario
+    4300006: Cadeiras
+    4300008: Pau das cadeiras
   materials:
     importMaterials: 1
     materialName: 0
