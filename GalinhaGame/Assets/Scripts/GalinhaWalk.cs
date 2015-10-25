@@ -13,7 +13,7 @@ public class GalinhaWalk : MonoBehaviour {
 		//Ativa a animaçao da galinha para andar
 		galinhaAnimator.SetBool("andar", true);
 		galinhaAnimator.SetBool("ciscar", false);
-		rand = Random.Range(0,9);
+		rand = Random.Range(1,8);
 	}
 	void FixedUpdate() {
 	

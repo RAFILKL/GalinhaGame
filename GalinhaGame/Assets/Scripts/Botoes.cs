@@ -14,8 +14,11 @@ public class Botoes : MonoBehaviour {
 
     public void botclick1()
     {
-        cloneCarro = Instantiate(carro, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
-		Galinha.carros--;
+        if (Galinha.carros > 0)
+        {
+            cloneCarro = Instantiate(carro, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
+            Galinha.carros--;
+        }
 		
 	}
 

@@ -26,13 +26,41 @@ public class CarroWalk : MonoBehaviour {
 		
 		if (hit.gameObject.name == "GalinhaPrefab(Clone)")
 		{		
-			Destroy(Galinha.cloneGalinha);
+			Destroy(Galinha.cloneGalinha1);
 			Galinha.pontos++;
 			Galinha.carros++;
 			
 		}
-		
-	}
+        if (hit.gameObject.name == "GalinhaPrefab_2(Clone)")
+        {
+            Destroy(Galinha.cloneGalinha2);
+            Galinha.pontos++;
+            Galinha.carros++;
+
+        }
+        if (hit.gameObject.name == "GalinhaPrefab_3(Clone)")
+        {
+            Destroy(Galinha.cloneGalinha3);
+            Galinha.pontos++;
+            Galinha.carros++;
+
+        }
+        if (hit.gameObject.name == "GalinhaPrefab_4(Clone)")
+        {
+            Destroy(Galinha.cloneGalinha4);
+            Galinha.pontos++;
+            Galinha.carros++;
+
+        }
+        if (hit.gameObject.name == "GalinhaPrefab_5(Clone)")
+        {
+            Destroy(Galinha.cloneGalinha5);
+            Galinha.pontos++;
+            Galinha.carros++;
+
+        }
+
+    }
 	
 
    

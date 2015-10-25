@@ -10,10 +10,18 @@ public class Galinha : MonoBehaviour {
 	public GameObject spawn5;
 
     public GameObject galinha;
+    public GameObject galinha2;
+    public GameObject galinha3;
+    public GameObject galinha4;
+    public GameObject galinha5;
     private int rand;
     private float timer = 0;
-    public static GameObject cloneGalinha;
-	public static int pontos = 0;
+    public static GameObject cloneGalinha1;
+    public static GameObject cloneGalinha2;
+    public static GameObject cloneGalinha3;
+    public static GameObject cloneGalinha4;
+    public static GameObject cloneGalinha5;
+    public static int pontos = 0;
 	public static int carros = 5;
 	//public static GameObject[] galinhas = new GameObject[100];
 	protected int i = 0;
@@ -39,37 +47,35 @@ public class Galinha : MonoBehaviour {
     void Update() {
 
 
-        if (timer > 4) {
+        if (timer > 3) {
             rand = Random.Range(-1, 5);
             //ponto 1
-            if (rand == 0) {	
-				cloneGalinha = Instantiate(galinha, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
+            if (rand == 0) {
+				cloneGalinha1 = Instantiate(galinha, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
 
-				Destroy(cloneGalinha, 10f);
+				Destroy(cloneGalinha1, 10f);
 			    				    
 				
 
                 
             } else if (rand == 1) {
-				cloneGalinha = Instantiate(galinha, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
+                cloneGalinha2 = Instantiate(galinha2, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
 
-				Destroy(cloneGalinha, 10f);
+				Destroy(cloneGalinha2, 10f);
 					
                 
             } else if (rand == 2) {
-
-				cloneGalinha = Instantiate(galinha, spawn3.transform.position, spawn3.transform.rotation) as GameObject;
+                cloneGalinha3 = Instantiate(galinha3, spawn3.transform.position, spawn3.transform.rotation) as GameObject;
 				
-				Destroy(cloneGalinha, 10f);
+				Destroy(cloneGalinha3, 10f);
 			} else if (rand == 3) {
-				cloneGalinha = Instantiate(galinha, spawn4.transform.position, spawn4.transform.rotation) as GameObject;
+                cloneGalinha4 = Instantiate(galinha4, spawn4.transform.position, spawn4.transform.rotation) as GameObject;
 				
-				Destroy(cloneGalinha, 10f);
+				Destroy(cloneGalinha4, 10f);
 			} else if (rand == 4) {
+                cloneGalinha5 = Instantiate(galinha5, spawn5.transform.position, spawn5.transform.rotation) as GameObject;
 				
-				cloneGalinha = Instantiate(galinha, spawn5.transform.position, spawn5.transform.rotation) as GameObject;
-				
-				Destroy(cloneGalinha, 10f);	
+				Destroy(cloneGalinha5, 10f);	
 			} 
             
             timer = 0;
