@@ -5,7 +5,6 @@ public class CarroWalk : MonoBehaviour {
 
       public float speedMove = 3f;
 	  public GameObject galinha;
-
     // Use this for initialization
     void Start()
     {
@@ -22,18 +21,21 @@ public class CarroWalk : MonoBehaviour {
 
     }
 
+	void OnCollisionEnter(Collision hit)
+	{
+		
+		if (hit.gameObject.name == "GalinhaPrefab(Clone)")
+		{		
+			Destroy(Galinha.cloneGalinha);
+			Galinha.pontos++;
+			Galinha.carros++;
+			
+		}
+		
+	}
+	
 
-    void OnCollisionEnter(Collision hit)
-    {
-        Debug.Log("tocou1");
-        if (hit.gameObject.name == "GalinhaPrefab(Clone)")
-        {
-            Debug.Log("tocou");
-            Destroy(Galinha.cloneGalinha);
-            Galinha.pontos++;
-        }
-
-    }
+   
 
 }
 

@@ -2,19 +2,22 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Pontos : MonoBehaviour {
+public class Canvas : MonoBehaviour {
 
-    public Text texto;
+    public Text pontos;
+	public Text carros;
 
 	// Use this for initialization
 	void Start () {
-        texto = GetComponent<Text>();
+        
+
 	}
 
 
 	
 	// Update is called once per frame
 	void Update () {
-        texto.text = "Pontos: " + Galinha.pontos;
+		pontos.text = "Pontos: " + Galinha.pontos;
+		carros.text = "Carros: " + Galinha.carros;
 	}
 }
