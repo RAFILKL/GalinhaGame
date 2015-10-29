@@ -4,8 +4,10 @@ using System.Collections;
 public class GalinhaWalk : MonoBehaviour {
     
     
-	public int rand;
+	public int rand, rand2;
 	public Animator galinhaAnimator;
+	public Animation galinhaAnimation;
+	private float timer;
 
 
     // Use this for initialization
@@ -13,14 +15,31 @@ public class GalinhaWalk : MonoBehaviour {
 		//Ativa a animaçao da galinha para andar
 		galinhaAnimator.SetBool("andar", true);
 		galinhaAnimator.SetBool("ciscar", false);
-		rand = Random.Range(1,8);
+		rand = Random.Range(0,8);
+
 	}
 	void FixedUpdate() {
-	
+		timer += Time.deltaTime;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+		// IA GALINHA
+		 if(timer > 3) {
+			rand2 = Random.Range (0,1);
+		    switch(rand2) {
+			  //Galinha continua andando 
+			case 0:
+				break;
+		      //Galinha para
+			case 1:
+				transform.Translate(Vector3.forward * 0);
+				break;
+			}
+		 }
+		timer = 0;
 
 
 		switch (rand) {
@@ -51,10 +70,11 @@ public class GalinhaWalk : MonoBehaviour {
 		}
 
 
+	
+
 
 
     }
-
 
 
   
