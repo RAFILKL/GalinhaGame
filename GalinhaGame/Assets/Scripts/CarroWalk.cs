@@ -59,6 +59,13 @@ public class CarroWalk : MonoBehaviour {
             Galinha.carros++;
 
         }
+        if (hit.gameObject.name == "GalinhaPrefab_6(Clone)")
+        {
+            Destroy(Galinha.cloneGalinha6);
+            Galinha.pontos++;
+            Galinha.carros++;
+
+        }
 
     }
 	

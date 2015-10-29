@@ -15,7 +15,7 @@ public class GalinhaWalk : MonoBehaviour {
 		//Ativa a animaçao da galinha para andar
 		galinhaAnimator.SetBool("andar", true);
 		galinhaAnimator.SetBool("ciscar", false);
-		rand = Random.Range(0,8);
+		rand = Random.Range(1,8);
 
 	}
 	void FixedUpdate() {
@@ -45,27 +45,35 @@ public class GalinhaWalk : MonoBehaviour {
 		switch (rand) {
 		case 1:
 			transform.Translate(Vector3.forward * 0.3f);
+			galinhaAnimator.speed = 0.3f;
 			break;
 		case 2:
 			transform.Translate(Vector3.forward * 0.4f);
+			galinhaAnimator.speed = 0.4f;
 			break;
 		case 3:
 			transform.Translate(Vector3.forward * 0.6f);
+			galinhaAnimator.speed = 0.7f;
 			break;
 		case 4:
 			transform.Translate(Vector3.forward * 0.7f);
+			galinhaAnimator.speed = 0.8f;
 			break;
 		case 5:
 			transform.Translate(Vector3.forward * 0.8f);
+			galinhaAnimator.speed = 1;
 			break;
 		case 6:
 			transform.Translate(Vector3.forward * 1);
+			galinhaAnimator.speed = 1.2f;
 			break;
 		case 7:
 			transform.Translate(Vector3.forward * 1.1f);
+			galinhaAnimator.speed = 1.3f;
 			break;
 		case 8:
 			transform.Translate(Vector3.forward * 1.2f);
+			galinhaAnimator.speed = 1.7f;
 			break;
 		}
 
