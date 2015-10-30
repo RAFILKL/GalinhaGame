@@ -5,8 +5,8 @@ public class Menu1 : MonoBehaviour {
 	
 
 	public void clickPlay() {
-		Application.LoadLevel (1);
-	}
+        Application.LoadLevel("GamePlay");
+    }
 	public void clickSair() {
 		Application.Quit ();
 	}
