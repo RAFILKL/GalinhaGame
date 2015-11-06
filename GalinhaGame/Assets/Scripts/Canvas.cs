@@ -17,7 +17,7 @@ public class Canvas : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		pontos.text = "Pontos: " + Galinha.pontos;
-		carros.text = "Carros: " + Galinha.carros;
+		pontos.text = "Pontos: " + GameController.pontos;
+		carros.text = "Carros: " + GameController.carros;
 	}
 }
