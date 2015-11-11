@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 16cc1b56f54cfdb42af557eff2a04f9c
-timeCreated: 1446767920
+guid: 991e3826be9906645b3a4aeb909f5a89
+timeCreated: 1447255490
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,10 +9,10 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Cenario
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 2
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4

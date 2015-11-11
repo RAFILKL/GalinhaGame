@@ -29,7 +29,7 @@ public class GalinhaWalk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		// IA GALINHA
+		/*// IA GALINHA
 		 if(timer > 3) {
 			galinhaAnimator.SetBool(andar,true);
 			galinhaAnimator.SetBool(ciscar,false);
@@ -52,7 +52,7 @@ public class GalinhaWalk : MonoBehaviour {
 
 		 }
 
-
+		*/
 		switch (rand) {
 		case 1:
 			transform.Translate(Vector3.forward * 0.3f);
