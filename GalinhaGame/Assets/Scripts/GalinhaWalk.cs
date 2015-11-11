@@ -5,16 +5,20 @@ public class GalinhaWalk : MonoBehaviour {
     
     
 	public int rand, rand2;
+	private int  andar, ciscar;
 	public Animator galinhaAnimator;
 	public Animation galinhaAnimation;
+    
 	private float timer;
 
 
     // Use this for initialization
     void Start () {
+		andar = Animator.StringToHash ("andar");
+		ciscar = Animator.StringToHash ("ciscar");
 		//Ativa a animaçao da galinha para andar
-		galinhaAnimator.SetBool("andar", true);
-		galinhaAnimator.SetBool("ciscar", false);
+		galinhaAnimator.SetBool(andar,true);
+		galinhaAnimator.SetBool(ciscar,false);
 		rand = Random.Range(1,8);
 
 	}
@@ -25,21 +29,28 @@ public class GalinhaWalk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
 		// IA GALINHA
 		 if(timer > 3) {
-			rand2 = Random.Range (0,1);
+			galinhaAnimator.SetBool(andar,true);
+			galinhaAnimator.SetBool(ciscar,false);
+			rand2 = Random.Range (0,2);
 		    switch(rand2) {
 			  //Galinha continua andando 
 			case 0:
 				break;
 		      //Galinha para
 			case 1:
-				transform.Translate(Vector3.forward * 0);
+				galinhaAnimator.SetBool(andar,false);
+				galinhaAnimator.SetBool(ciscar,true);	
+
+				transform.Translate(Vector3.forward * -0.9f);               
+
+
 				break;
 			}
+			timer = 0;
+
 		 }
-		timer = 0;
 
 
 		switch (rand) {
