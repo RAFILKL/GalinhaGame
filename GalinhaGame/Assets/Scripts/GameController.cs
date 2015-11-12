@@ -14,10 +14,7 @@ public class GameController: MonoBehaviour {
     private int rand;
     private float timer = 0;
     public static int pontos = 0;
-	public static int carros = 100;
-	protected int i = 0;
-	protected int j = 0;
-
+	public static int carros = 10;
 
 
 
@@ -27,8 +24,7 @@ public class GameController: MonoBehaviour {
     void Start () {
 	}
 
-    void FixedUpdate ()
-    {
+    void FixedUpdate ()  {
         timer += Time.deltaTime;
     }
 
@@ -37,10 +33,11 @@ public class GameController: MonoBehaviour {
 
 
         if (timer > 3) {
-            rand = Random.Range(0, 6);
+            rand = Random.Range(0, 5);
             //ponto 1
             if (rand == 0) {
 				clonegalinha = Instantiate(galinha, spawn1.transform.position, spawn1.transform.rotation)as GameObject;
+				Destroy(clonegalinha, 10f);
             } else if (rand == 1) {
 				clonegalinha2 = Instantiate(galinha, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
 				Destroy(clonegalinha2, 10f);
@@ -60,10 +57,9 @@ public class GameController: MonoBehaviour {
 
             timer = 0;
 
+
         }
 	}
-
-
 
 
 }

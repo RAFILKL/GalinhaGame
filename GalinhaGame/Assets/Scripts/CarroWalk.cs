@@ -9,8 +9,7 @@ public class CarroWalk : MonoBehaviour {
 	  public  AudioSource audioManager;
 	  public  int rand;
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
 
     }
 
