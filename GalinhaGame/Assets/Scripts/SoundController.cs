@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class SoundController : MonoBehaviour  {
-	public  AudioClip gem1,gem2,gem3;
-	public  AudioSource audioManager;
-	public  int rand;
-
-	 public void chamaSom() {
+	public AudioClip gem1,gem2,gem3;
+	public AudioSource audioManager;
+	public int rand;
+	void Start() {
+		Debug.Log ("Oi");
+	}
+	public void chamaSom() {
 		rand = Random.Range(0,2);
 		switch (rand) {
 		case 0:
@@ -23,6 +25,6 @@ public class SoundController : MonoBehaviour  {
 			break;
 		}
 
-		
 	}
+
 }

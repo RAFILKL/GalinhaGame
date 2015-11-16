@@ -20,6 +20,7 @@ public class GameController: MonoBehaviour {
 
 
 
+
     // Use this for initialization
     void Start () {
 	}
@@ -30,8 +31,6 @@ public class GameController: MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
-
         if (timer > 3) {
             rand = Random.Range(0, 5);
             //ponto 1
@@ -56,8 +55,6 @@ public class GameController: MonoBehaviour {
             }
 
             timer = 0;
-
-
         }
 	}
 
