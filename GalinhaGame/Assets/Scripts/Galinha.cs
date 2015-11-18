@@ -3,14 +3,15 @@ using System.Collections;
 
 public class Galinha : MonoBehaviour {
 	public GameObject galinha;
-	public SoundController sc;
+	GameObject scg;
+	SoundController sc;
 
 
 
 	// Use this for initialization
 	void Start () {
-		sc = GetComponent<SoundController>();
-
+		scg = GameObject.FindGameObjectWithTag ("SoundController");
+		sc = scg.GetComponent<SoundController> ();
 	    
 	}
 

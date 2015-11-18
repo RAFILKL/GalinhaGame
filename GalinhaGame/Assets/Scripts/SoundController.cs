@@ -2,28 +2,39 @@
 using System.Collections;
 
 public class SoundController : MonoBehaviour  {
-	public AudioClip gem1,gem2,gem3;
+	public AudioClip[] gemidos;
 	public AudioSource audioManager;
 	public int rand;
-	void Start() {
-		Debug.Log ("Oi");
-	}
+
 	public void chamaSom() {
-		rand = Random.Range(0,2);
+		rand = Random.Range(0,5);
 		switch (rand) {
 		case 0:
-			audioManager.clip = gem1;
+			audioManager.clip = gemidos[0];
 			audioManager.Play ();
 			break;
 		case 1:
-			audioManager.clip = gem2;
+			audioManager.clip = gemidos[1];		
 			audioManager.Play ();
 			break;
 		case 2:
-			audioManager.clip = gem3;
+			audioManager.clip = gemidos[2];
+			audioManager.Play ();
+			break;		
+		case 3:
+			audioManager.clip = gemidos[3];
+		    audioManager.Play ();
+		    break;
+		case 4:
+			audioManager.clip = gemidos[4];
 			audioManager.Play ();
 			break;
-		}
+		case 5:
+			audioManager.clip = gemidos[5];
+			audioManager.Play ();
+			break;
+		
+	}
 
 	}
 
