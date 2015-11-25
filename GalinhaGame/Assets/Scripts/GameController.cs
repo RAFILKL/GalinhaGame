@@ -10,11 +10,12 @@ public class GameController: MonoBehaviour {
 	public GameObject spawn5;
     public GameObject spawn6;
 	private GameObject clonegalinha, clonegalinha2,clonegalinha3,clonegalinha4,clonegalinha5, clonegalinha6;
+	public  GameObject vida1,vida2,vida3;
 	public  GameObject galinha;
     private int rand;
     private float timer = 0;
     public static int pontos = 0;
-	public static int carros = 10;
+	public static int carros = 3;
 
 
 
@@ -22,7 +23,8 @@ public class GameController: MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+	void Start () {
+
 	}
 
     void FixedUpdate ()  {
@@ -51,11 +53,16 @@ public class GameController: MonoBehaviour {
 				Destroy(clonegalinha5, 10f);			
 			} else if (rand == 5) {
 				clonegalinha6 = Instantiate(galinha, spawn6.transform.position, spawn6.transform.rotation) as GameObject;
-				Destroy(clonegalinha6, 10f);               
+				Destroy(clonegalinha6, 10f);            
+
             }
 
             timer = 0;
         }
+	}
+
+	public void destroiVida() {
+		Destroy (vida1.gameObject);
 	}
 
 

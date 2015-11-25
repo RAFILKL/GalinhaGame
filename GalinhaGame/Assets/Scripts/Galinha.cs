@@ -5,14 +5,14 @@ public class Galinha : MonoBehaviour {
 	public GameObject galinha;
 	GameObject scg;
 	SoundController sc;
-
+	GameController gc;
 
 
 	// Use this for initialization
 	void Start () {
 		scg = GameObject.FindGameObjectWithTag ("SoundController");
 		sc = scg.GetComponent<SoundController> ();
-	    
+		gc = gameObject.GetComponent<GameController> ();
 	}
 
 	
@@ -25,7 +25,11 @@ public class Galinha : MonoBehaviour {
 		if(hit.gameObject.tag == "Carro") {
 			sc.chamaSom();
 			Destroy (this.gameObject);
-			GameController.pontos++;
+			GameController.pontos += 100;
+			GameController.carros++;
+			gc.destroiVida();
+
+
 
 			 
 

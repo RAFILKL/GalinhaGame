@@ -8,9 +8,10 @@ public class GalinhaWalk : MonoBehaviour {
 	private int  andar, ciscar;
 	public Animator galinhaAnimator;
 	public Animation galinhaAnimation;
+	public Rigidbody rig;
     
-	private float timer;
-
+	private float timer, vel;
+	public static bool parada, jaPassou;
 
     // Use this for initialization
     void Start () {
@@ -20,7 +21,8 @@ public class GalinhaWalk : MonoBehaviour {
 		galinhaAnimator.SetBool(andar,true);
 		galinhaAnimator.SetBool(ciscar,false);
 		rand = Random.Range(1,8);
-
+		parada = false;
+		jaPassou = false;
 	}
 	void FixedUpdate() {
 		timer += Time.deltaTime;
@@ -29,74 +31,99 @@ public class GalinhaWalk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		/*// IA GALINHA
-		 if(timer > 3) {
-			galinhaAnimator.SetBool(andar,true);
-			galinhaAnimator.SetBool(ciscar,false);
-			rand2 = Random.Range (0,2);
-		    switch(rand2) {
-			  //Galinha continua andando 
+
+		//IA GALINHA
+		if (timer > 3) {
+			galinhaAnimator.SetBool (andar, true);
+			galinhaAnimator.SetBool (ciscar, false);
+			rand2 = Random.Range (0, 2);
+			switch (rand2) {
+			//Galinha continua andando 
 			case 0:
 				break;
 		      //Galinha para
+		     case 1:
+//				galinhaAnimator.SetBool(andar,false);
+//				galinhaAnimator.SetBool(ciscar,true);
+//				parada = true;
+//				jaPassou = true;
+//				mudaVelocidade(0);
+			    break;
+			}
+
+				timer = 0;
+			}
+			
+
+
+			switch (rand) {
 			case 1:
-				galinhaAnimator.SetBool(andar,false);
-				galinhaAnimator.SetBool(ciscar,true);	
-
-				transform.Translate(Vector3.forward * -0.9f);               
-
-
+			if (parada == false && jaPassou == false) {
+					vel = 0.3f;
+					mudaVelocidade (vel);
+				}
+				break;
+			case 2:
+			   if (parada == false && jaPassou == false) {
+			 		vel = 0.5f;
+					mudaVelocidade (vel);
+				}
+				break;
+			case 3:
+			if (parada == false && jaPassou == false) {
+					vel = 0.7f;
+					mudaVelocidade (vel);
+				}
+				break;
+			case 4:
+			if (parada == false && jaPassou == false) {
+					vel = 0.9f;
+					mudaVelocidade (vel);
+				}
+				break;
+			case 5:
+			if (parada == false && jaPassou == false) {
+					vel = 1f;
+					mudaVelocidade (vel);
+				}
+				break;
+			case 6:
+			if (parada == false && jaPassou == false) {
+					vel = 1.2f;				
+					mudaVelocidade (vel);
+				}
+				break;
+			case 7:
+			if (parada == false && jaPassou == false) {
+					vel = 1.3f;
+					mudaVelocidade (vel);
+				}
+				break;
+			case 8:
+			if (parada == false && jaPassou == false) {
+					vel = 1.5f;
+					mudaVelocidade (vel);
+				}
+				break;
+			default:
 				break;
 			}
-			timer = 0;
-
-		 }
-
-		*/
-		switch (rand) {
-		case 1:
-			transform.Translate(Vector3.forward * 0.3f);
-			galinhaAnimator.speed = 0.3f;
-			break;
-		case 2:
-			transform.Translate(Vector3.forward * 0.4f);
-			galinhaAnimator.speed = 0.4f;
-			break;
-		case 3:
-			transform.Translate(Vector3.forward * 0.6f);
-			galinhaAnimator.speed = 0.7f;
-			break;
-		case 4:
-			transform.Translate(Vector3.forward * 0.7f);
-			galinhaAnimator.speed = 0.8f;
-			break;
-		case 5:
-			transform.Translate(Vector3.forward * 0.8f);
-			galinhaAnimator.speed = 1;
-			break;
-		case 6:
-			transform.Translate(Vector3.forward * 1);
-			galinhaAnimator.speed = 1.2f;
-			break;
-		case 7:
-			transform.Translate(Vector3.forward * 1.1f);
-			galinhaAnimator.speed = 1.3f;
-			break;
-		case 8:
-			transform.Translate(Vector3.forward * 1.2f);
-			galinhaAnimator.speed = 1.7f;
-			break;
 		}
 
 
+		public void mudaVelocidade(float vel) {	
+		   float vel2 = vel + 0.4f;
+		 
+		   transform.Translate (Vector3.forward * vel);
+		   galinhaAnimator.speed = vel2;
+			if (vel > 0) {
+				parada = false;
+			} else {
+				parada = true;
+			}
+		   
+	    }
+
 	
-
-
-
-    }
-
-
-  
-
-
 }
+
