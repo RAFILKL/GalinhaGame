@@ -27,7 +27,7 @@ public class Galinha : MonoBehaviour {
 			Destroy (this.gameObject);
 			GameController.pontos += 100;
 			GameController.carros++;
-			gc.destroiVida();
+
 
 
 

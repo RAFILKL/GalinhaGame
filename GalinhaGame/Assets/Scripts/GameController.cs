@@ -12,10 +12,17 @@ public class GameController: MonoBehaviour {
 	private GameObject clonegalinha, clonegalinha2,clonegalinha3,clonegalinha4,clonegalinha5, clonegalinha6;
 	public  GameObject vida1,vida2,vida3;
 	public  GameObject galinha;
+	public UIController UI;
     private int rand;
-    private float timer = 0;
-    public static int pontos = 0;
+	private float timer = 0;
+	private float timer2 = 0;
+	public static int pontos = 0;
 	public static int carros = 3;
+	public static bool sCarro = false;
+	public static bool perdeu = false;
+	private bool verifica = false;
+	public static bool carroEmCena = false;
+	public static bool passou = false;
 
 
 
@@ -25,6 +32,7 @@ public class GameController: MonoBehaviour {
     // Use this for initialization
 	void Start () {
 
+
 	}
 
     void FixedUpdate ()  {
@@ -33,6 +41,21 @@ public class GameController: MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+		temPontos ();
+			if (carros == 0 && !passou && !perdeu) {			
+			timer2 += Time.deltaTime;
+			  if(timer2 > 3) {
+			    if(carros == 0){
+			    	passou = true;
+			        UI.sCarro();
+				}
+				timer2 = 0;
+			  }
+			} 
+
+
+		 
+
         if (timer > 3) {
             rand = Random.Range(0, 5);
             //ponto 1
@@ -50,20 +73,28 @@ public class GameController: MonoBehaviour {
 				Destroy(clonegalinha4, 10f);
 			} else if (rand == 4) {
 			    clonegalinha5 = Instantiate(galinha, spawn5.transform.position, spawn5.transform.rotation) as GameObject;
-				Destroy(clonegalinha5, 10f);			
+				Destroy(clonegalinha5, 10f);
 			} else if (rand == 5) {
 				clonegalinha6 = Instantiate(galinha, spawn6.transform.position, spawn6.transform.rotation) as GameObject;
-				Destroy(clonegalinha6, 10f);            
-
+				Destroy(clonegalinha6, 10f);          
+		
             }
 
             timer = 0;
         }
+
 	}
 
-	public void destroiVida() {
-		Destroy (vida1.gameObject);
+	public void temPontos() {
+		int aux;
+		aux = pontos - 70;
+		Debug.Log (aux);
+		if(aux > 0) {
+			verifica = true;
+		} else {
+			verifica = false;
+		}
+		
 	}
-
-
 }
+

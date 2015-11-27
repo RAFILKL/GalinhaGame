@@ -6,6 +6,7 @@ public class SoundController : MonoBehaviour  {
 	public AudioSource audioManager;
 	public int rand;
 
+
 	public void chamaSom() {
 		rand = Random.Range(0,5);
 		switch (rand) {

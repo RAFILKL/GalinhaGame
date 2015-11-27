@@ -12,6 +12,15 @@ public class Botoes : MonoBehaviour {
     public GameObject carro;
     private GameObject cloneCarro;
 
+	public void temCarro() {
+		if(cloneCarro.activeInHierarchy){
+			GameController.carroEmCena = true;
+			Debug.Log(cloneCarro);
+		}
+		GameController.carroEmCena = false;
+	
+	}
+
     public void botclick1()
     {
 
@@ -57,6 +66,8 @@ public class Botoes : MonoBehaviour {
 
 		}
 	}
+
+
     
 
 }
