@@ -14,7 +14,7 @@ public class UIController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		textoPerdeuPontos.GetComponent<Text> ().text = "oi" + GameController.pontos.ToString();
+
 		
 	}
 	
@@ -42,6 +42,7 @@ public class UIController : MonoBehaviour {
 		botaoPerdeu.SetActive (true);
 		textoPerdeu.SetActive (true);
 		textoPerdeuPontos.SetActive (true);
+		textoPerdeuPontos.GetComponent<Text> ().text = GameController.pontos.ToString();
 
 
 	}

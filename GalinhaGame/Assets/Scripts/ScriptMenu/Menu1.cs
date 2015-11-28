@@ -12,6 +12,10 @@ public class Menu1 : MonoBehaviour {
 	}
 	public void ClickScore() {
 		//Implementar scoreboard
-		Debug.Log ("Pontos!");
+		Application.LoadLevel ("ScoreBoard");
+	}
+	public void clickMenu() {
+		//Implementar scoreboard
+		Application.LoadLevel ("Menu");
 	}
 }
