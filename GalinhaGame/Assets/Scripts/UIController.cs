@@ -3,14 +3,19 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour {
-	public GameObject painel;
+	public GameObject painelPrincipal;
+	public GameObject painelComprarCarro;
+	public GameObject scrollBar;
+	public Button botaoLoja;
 	public GameObject botaoComprar;
-	public GameObject botaoSair;
-	public GameObject texto;
+	public GameObject textoComprarCarro;
 	public GameObject botaoPerdeu;
 	public GameObject textoPerdeu;
 	public GameObject textoPerdeuPontos;
+	public GameObject[] botoes;
 	private Text text;
+	private bool naLoja = false;
+	private bool perdeuM = false;
 
 	// Use this for initialization
 	void Start () {
@@ -20,67 +25,65 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 
 	}
-	public void sCarro() {
-	  if (GameController.pontos >= 70 || GameController.carros != 0) {
-			painel.SetActive (true);
-			botaoComprar.SetActive (true);
-			botaoSair.SetActive (true);
-			texto.SetActive (true);
+
+
+
+	public void entraLoja() {
+		if (!naLoja && !perdeuM) {
+			painelPrincipal.SetActive(true);
+			painelComprarCarro.SetActive(true);
+			botaoComprar.SetActive(true);
+			textoComprarCarro.SetActive(true);
+			scrollBar.SetActive(true);
+			naLoja = true;
+			for(int i = 0; i < botoes.Length; i++) {
+				botoes[i].SetActive(false);
+			}
 		} else {
-			botaoComprar.SetActive (false);
-			botaoSair.SetActive (false);
-			texto.SetActive (false);
-			mostraPerdeu();
+			painelPrincipal.SetActive(false);
+			painelComprarCarro.SetActive(false);
+			botaoComprar.SetActive(false);
+			textoComprarCarro.SetActive(false);
+			scrollBar.SetActive(false);
+			naLoja = false;
+			for(int i = 0; i < botoes.Length; i++) {
+				botoes[i].SetActive(true);
+			}
 		}
-		
 	}
 	public void mostraPerdeu() {
-
-		painel.SetActive (true);
+		painelPrincipal.SetActive (true);
 		botaoPerdeu.SetActive (true);
 		textoPerdeu.SetActive (true);
 		textoPerdeuPontos.SetActive (true);
 		textoPerdeuPontos.GetComponent<Text> ().text = GameController.pontos.ToString();
-
+		perdeuM = true;
 
 	}
 	public void perdeu() {
-		painel.SetActive (false);
+		painelPrincipal.SetActive (false);
 		botaoComprar.SetActive (false);
-		botaoSair.SetActive (false);
 		textoPerdeu.SetActive (false);
 		textoPerdeuPontos.SetActive (false);
 		GameController.pontos = 0;
-		GameController.carros = 3;
+		GameController.carros = 5;
 		Application.LoadLevel ("menu");
 		GameController.passou = false;
 		
 	}
 	public void compraCarro() {
 		int aux;
-		aux = GameController.pontos - 70;
-		if (aux > 0) {
-			GameController.pontos -= 70;
+		aux = GameController.pontos - 100;
+		if (aux >= 0) {
+			GameController.pontos -= 100;
 			GameController.carros++;
 		}
 		
 	}
 
-	public void sairCompraCarro() {
-		   if (GameController.carros != 0) {
-			painel.SetActive (false);
-			botaoComprar.SetActive (false);
-			botaoSair.SetActive (false);
-			texto.SetActive (false);
-			GameController.passou = false;
-
-		} 
-
-
-		
-	}
 
 
 

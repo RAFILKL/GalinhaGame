@@ -11,11 +11,11 @@ public class Menu1 : MonoBehaviour {
 		Application.Quit ();
 	}
 	public void ClickScore() {
-		//Implementar scoreboard
+
 		Application.LoadLevel ("ScoreBoard");
 	}
 	public void clickMenu() {
-		//Implementar scoreboard
+
 		Application.LoadLevel ("Menu");
 	}
 }

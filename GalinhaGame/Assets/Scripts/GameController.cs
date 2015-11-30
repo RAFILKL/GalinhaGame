@@ -17,7 +17,7 @@ public class GameController: MonoBehaviour {
 	private float timer = 0;
 	private float timer2 = 0;
 	public static int pontos = 0;
-	public static int carros = 3;
+	public static int carros = 5;
 	public static bool sCarro = false;
 	public static bool perdeu = false;
 	private bool verifica = false;
@@ -37,25 +37,19 @@ public class GameController: MonoBehaviour {
 
     void FixedUpdate ()  {
         timer += Time.deltaTime;
+
     }
 
     // Update is called once per frame
     void Update() {
-		temPontos ();
-			if (carros == 0 && !passou && !perdeu) {			
+		if(pontos < 100 && carros == 0){
 			timer2 += Time.deltaTime;
-			  if(timer2 > 3) {
-			    if(carros == 0){
-			    	passou = true;
-			        UI.sCarro();
-				}
-				timer2 = 0;
-			  }
-			} 
-
-
-		 
-
+			if(timer2 > 3) {
+				UI.mostraPerdeu();
+				timer = 0;
+			}
+		
+		}
         if (timer > 3) {
             rand = Random.Range(0, 5);
             //ponto 1
@@ -85,16 +79,5 @@ public class GameController: MonoBehaviour {
 
 	}
 
-	public void temPontos() {
-		int aux;
-		aux = pontos - 70;
-		Debug.Log (aux);
-		if(aux > 0) {
-			verifica = true;
-		} else {
-			verifica = false;
-		}
-		
-	}
 }
 

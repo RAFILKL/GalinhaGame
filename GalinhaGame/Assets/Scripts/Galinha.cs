@@ -25,7 +25,7 @@ public class Galinha : MonoBehaviour {
 		if(hit.gameObject.tag == "Carro") {
 			sc.chamaSom();
 			Destroy (this.gameObject);
-			GameController.pontos += 100;
+			GameController.pontos += GalinhaWalk.valorGalinha;
 			GameController.carros++;
 
 
