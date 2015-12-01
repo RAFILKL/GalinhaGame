@@ -32,6 +32,7 @@ public class UIController : MonoBehaviour {
 
 
 	public void entraLoja() {
+
 		if (!naLoja && !perdeuM) {
 			painelPrincipal.SetActive(true);
 			painelComprarCarro.SetActive(true);

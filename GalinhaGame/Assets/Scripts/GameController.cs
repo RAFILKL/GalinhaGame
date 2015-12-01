@@ -20,7 +20,6 @@ public class GameController: MonoBehaviour {
 	public static int carros = 5;
 	public static bool sCarro = false;
 	public static bool perdeu = false;
-	private bool verifica = false;
 	public static bool carroEmCena = false;
 	public static bool passou = false;
 
@@ -55,22 +54,22 @@ public class GameController: MonoBehaviour {
             //ponto 1
             if (rand == 0) {
 				clonegalinha = Instantiate(galinha, spawn1.transform.position, spawn1.transform.rotation)as GameObject;
-				Destroy(clonegalinha, 10f);
+				Destroy(clonegalinha, 15f);
             } else if (rand == 1) {
 				clonegalinha2 = Instantiate(galinha, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
-				Destroy(clonegalinha2, 10f);
+				Destroy(clonegalinha2, 15f);
             } else if (rand == 2) {
 				clonegalinha3 = Instantiate(galinha, spawn3.transform.position, spawn3.transform.rotation) as GameObject;
-				Destroy(clonegalinha3, 10f);
+				Destroy(clonegalinha3, 15f);
 			} else if (rand == 3) {
 				clonegalinha4 = Instantiate(galinha, spawn4.transform.position, spawn4.transform.rotation) as GameObject;
-				Destroy(clonegalinha4, 10f);
+				Destroy(clonegalinha4, 15f);
 			} else if (rand == 4) {
 			    clonegalinha5 = Instantiate(galinha, spawn5.transform.position, spawn5.transform.rotation) as GameObject;
-				Destroy(clonegalinha5, 10f);
+				Destroy(clonegalinha5, 15f);
 			} else if (rand == 5) {
 				clonegalinha6 = Instantiate(galinha, spawn6.transform.position, spawn6.transform.rotation) as GameObject;
-				Destroy(clonegalinha6, 10f);          
+				Destroy(clonegalinha6, 15f);          
 		
             }
 
