@@ -42,13 +42,26 @@ public class GameController: MonoBehaviour {
     // Update is called once per frame
     void Update() {
 		if(pontos < 100 && carros == 0){
+			perdeu = true;
 			timer2 += Time.deltaTime;
 			if(timer2 > 3) {
 				UI.mostraPerdeu();
-				timer = 0;
+				timer2 = 0;
 			}
-		
+
+			
 		}
+
+		if(carros == 0 && !perdeu) {
+			timer2 += Time.deltaTime;
+			if(timer2 > 3 && !sCarro) {
+				UI.semCarro();
+				sCarro = true;
+				timer2 = 0;
+			}
+
+		}
+
         if (timer > 3) {
             rand = Random.Range(0, 5);
             //ponto 1

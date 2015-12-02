@@ -12,6 +12,9 @@ public class UIController : MonoBehaviour {
 	public GameObject botaoPerdeu;
 	public GameObject textoPerdeu;
 	public GameObject textoPerdeuPontos;
+	public GameObject textoSCarro;
+	public GameObject botaoSCarroNao;
+	public GameObject botaoSCarroSim;
 	public GameObject[] botoes;
 	private Text text;
 	private bool naLoja = false;
@@ -32,8 +35,10 @@ public class UIController : MonoBehaviour {
 
 
 	public void entraLoja() {
-
 		if (!naLoja && !perdeuM) {
+			textoSCarro.SetActive (false);
+			botaoSCarroNao.SetActive (false);
+			botaoSCarroSim.SetActive (false);
 			painelPrincipal.SetActive(true);
 			painelComprarCarro.SetActive(true);
 			botaoComprar.SetActive(true);
@@ -73,7 +78,18 @@ public class UIController : MonoBehaviour {
 		GameController.carros = 5;
 		Application.LoadLevel ("menu");
 		GameController.passou = false;
+		botaoSCarroNao.SetActive (false);
+		botaoSCarroSim.SetActive (false);
+		textoSCarro.SetActive (false);
 		
+	}
+	public void semCarro(){
+		painelPrincipal.SetActive (true);
+		textoSCarro.SetActive (true);
+		botaoSCarroNao.SetActive (true);
+		botaoSCarroSim.SetActive (true);
+
+	    
 	}
 	public void compraCarro() {
 		int aux;
@@ -85,7 +101,11 @@ public class UIController : MonoBehaviour {
 		
 	}
 
+	// CONTROLA BOTAO SIM E NAo
 
+	public void clickNao(){
+		Application.LoadLevel ("ScoreBoard");
+	}
 
 
 }

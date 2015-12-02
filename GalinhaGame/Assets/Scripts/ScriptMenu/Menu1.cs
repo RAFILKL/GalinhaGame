@@ -18,4 +18,5 @@ public class Menu1 : MonoBehaviour {
 
 		Application.LoadLevel ("Menu");
 	}
+
 }
