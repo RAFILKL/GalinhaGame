@@ -58,8 +58,8 @@ public class GalinhaWalk : MonoBehaviour {
 			break;
 		case 4:
 			if(!especial) {
-			  mudaGalinha();
-			  especial = true;
+				especial = true;
+				mudaGalinha();
 			}
 			break;
 		}
@@ -136,10 +136,14 @@ public class GalinhaWalk : MonoBehaviour {
 		}	
 	}
 
-		public void paraGalinha() {	
-		   parada = true;
-		   transform.Translate (new Vector3(0,0,0));		   
-		}
+		public void paraGalinha() {		  
+			parada = true;			 
+			this.gameObject.transform.Translate (new Vector3 (0, 0, 0));		
+	     
+
+
+		   
+	}
 
 
 
@@ -148,12 +152,9 @@ public class GalinhaWalk : MonoBehaviour {
 		    float vel2 = vel + 0.4f;			
 		    this.transform.Translate (new Vector3(0,0,1) * vel);		    
 			galinhaAnimator.speed = vel2;
-		    } else {
-				this.transform.Translate (velc * 0);		    
-				galinhaAnimator.speed = 0;
-			}
-			
+		    } 
 		}
+
 	private void voaGalinha(){
 		galinhaAnimator.SetBool (voar, true);
 		galinhaAnimator.SetBool (andar,false);
@@ -162,8 +163,9 @@ public class GalinhaWalk : MonoBehaviour {
 	}
 	private void ciscaGalinha() {
 		paraGalinha ();
-		galinhaAnimator.SetBool (ciscar, true);
+		galinhaAnimator.SetBool(ciscar, true);
 		galinhaAnimator.SetBool(andar,false);
+
 
 	}
 	private void aceleraGalinha() {
