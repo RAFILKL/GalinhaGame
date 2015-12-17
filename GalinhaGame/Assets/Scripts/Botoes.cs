@@ -12,49 +12,43 @@ public class Botoes : MonoBehaviour {
     public GameObject carro;
     private GameObject cloneCarro;
 
-    public void botclick1()
-    {
+	private float timer = 0;
 
+	void FixedUpdate() {
+		timer += Time.deltaTime;
+	}
+
+	public void botclick1()  {
 			if (GameController.carros > 0) {
 				cloneCarro = Instantiate (carro, spawn1.transform.position, spawn1.transform.rotation) as GameObject;
 				GameController.carros--;
-
 		}
 		
 	}
 
-    public void botclick2()
-    {
-
+    public void botclick2()	{
 			if (GameController.carros > 0) {
 				cloneCarro = Instantiate (carro, spawn2.transform.position, spawn2.transform.rotation) as GameObject;
-				GameController.carros--;
-			
+				GameController.carros--;				
+
 		}
 	}
-    public void botclick3()
-    {
-
+    public void botclick3() {
 			if (GameController.carros > 0) {
 				cloneCarro = Instantiate (carro, spawn3.transform.position, spawn3.transform.rotation) as GameObject;
 				GameController.carros--;
-		
 		}
 	}
-    public void botclick4()
-    {
+    public void botclick4() {
 			if (GameController.carros > 0) {
-				cloneCarro = Instantiate (carro, spawn4.transform.position, spawn4.transform.rotation) as GameObject;
-				GameController.carros--;
-
+			cloneCarro = Instantiate (carro, spawn4.transform.position, spawn4.transform.rotation) as GameObject;
+			GameController.carros--;
 		}
 	}
-    public void botclick5()
-    {
+    public void botclick5() {
 			if (GameController.carros > 0) {
 				cloneCarro = Instantiate (carro, spawn5	.transform.position, spawn5.transform.rotation) as GameObject;
 				GameController.carros--;
-
 		}
 	}
 
