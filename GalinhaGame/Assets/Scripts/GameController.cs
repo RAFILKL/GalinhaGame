@@ -48,8 +48,7 @@ public class GameController: MonoBehaviour {
 				UI.mostraPerdeu();
 				timer2 = 0;
 			}
-
-			
+					
 		}
 
 		if(carros == 0 && !perdeu) {
@@ -59,6 +58,7 @@ public class GameController: MonoBehaviour {
 				sCarro = true;
 				timer2 = 0;
 			}
+
 
 		}
 

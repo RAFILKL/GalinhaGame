@@ -12,7 +12,10 @@ public class Botoes : MonoBehaviour {
     public GameObject carro;
     private GameObject cloneCarro;
 
+
 	private float timer = 0;
+
+
 
 	void FixedUpdate() {
 		timer += Time.deltaTime;
