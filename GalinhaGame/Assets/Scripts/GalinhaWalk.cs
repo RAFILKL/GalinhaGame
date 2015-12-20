@@ -58,7 +58,7 @@ public class GalinhaWalk : MonoBehaviour {
 			break;
 		case 4:
 			if(!especial) {
-			  mudaGalinha();
+			  this.mudaGalinha();
 			  especial = true;
 			}
 			break;
@@ -71,7 +71,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 0.3f;
 				valorGalinha = 30;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				// jaPassou = true;
 			}
 			break;
@@ -79,7 +79,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 0.5f;
 				valorGalinha = 30;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				//	jaPassou = true;
 			}
 			break;
@@ -87,7 +87,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 0.7f;
 				valorGalinha = 30;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				//	jaPassou = true;
 			}
 			break;
@@ -95,7 +95,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 0.9f;
 				valorGalinha = 35;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				//	jaPassou = true;
 			}
 			break;
@@ -103,7 +103,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 1f;
 				valorGalinha = 45;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				//	jaPassou = true;
 			}
 			break;
@@ -111,7 +111,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 1.2f;			
 				valorGalinha = 55;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				//	jaPassou = true;
 			}
 			break;
@@ -119,7 +119,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 1.3f;
 				valorGalinha = 65;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				//	jaPassou = true;
 			}
 			break;
@@ -127,7 +127,7 @@ public class GalinhaWalk : MonoBehaviour {
 			if (parada == false && jaPassou == false) {
 				vel = 1.5f;
 				valorGalinha = 75;
-				mudaVelocidade (vel);
+				this.mudaVelocidade (vel);
 				jaPassou = true;
 			}
 			break;
@@ -138,7 +138,7 @@ public class GalinhaWalk : MonoBehaviour {
 
 		public void paraGalinha() {	
 		   parada = true;
-		   transform.Translate (new Vector3(0,0,0));		   
+		   this.transform.Translate (0,0,0);		   
 		}
 
 
@@ -161,14 +161,14 @@ public class GalinhaWalk : MonoBehaviour {
 		//transform.Translate (Vector3.up * vel);
 	}
 	private void ciscaGalinha() {
-		paraGalinha ();
+		this.paraGalinha ();
 		galinhaAnimator.SetBool (ciscar, true);
 		galinhaAnimator.SetBool(andar,false);
 
 	}
 	private void aceleraGalinha() {
 		vel += 0.2f;
-		mudaVelocidade (vel);
+		this.mudaVelocidade (vel);
 
 	}
 	void mudaGalinha() {
@@ -176,15 +176,15 @@ public class GalinhaWalk : MonoBehaviour {
 		switch (rand3) {
 	    //Galinha acelera
 		case 0:
-			aceleraGalinha();
+			this.aceleraGalinha();
 			break;
 		//Galinha voa
 		case 1:
-			voaGalinha();
+			this.voaGalinha();
 			break;
 		//Galinha cisca
 		case 2:
-			ciscaGalinha();
+			this.ciscaGalinha();
 			break;		
 		
 		}
@@ -192,7 +192,7 @@ public class GalinhaWalk : MonoBehaviour {
 	}
 
 	void OnTriggerEnter() {
-		testaTrigger ();
+		this.testaTrigger ();
 	}
 
 
