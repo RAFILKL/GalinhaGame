@@ -16,25 +16,14 @@ public class UIController : MonoBehaviour {
 	public GameObject botaoSCarroNao;
 	public GameObject botaoSCarroSim;
 	public GameObject[] botoes;
-	private Text text;
-	private bool naLoja = false;
+	public static bool naLoja = false;
 	private bool perdeuM = false;
 
-	// Use this for initialization
-	void Start () {
-
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-
-	}
 
 
 
 	public void entraLoja() {
+
 		if (!naLoja && !perdeuM) {
 			textoSCarro.SetActive (false);
 			botaoSCarroNao.SetActive (false);
@@ -61,12 +50,15 @@ public class UIController : MonoBehaviour {
 		}
 	}
 	public void mostraPerdeu() {
-		painelPrincipal.SetActive (true);
-		botaoPerdeu.SetActive (true);
-		textoPerdeu.SetActive (true);
-		textoPerdeuPontos.SetActive (true);
-		textoPerdeuPontos.GetComponent<Text> ().text = GameController.pontos.ToString();
-		perdeuM = true;
+        if (GameController.myStates == GameController.gameStates.perdeu)
+        {
+            painelPrincipal.SetActive(true);
+            botaoPerdeu.SetActive(true);
+            textoPerdeu.SetActive(true);
+            textoPerdeuPontos.SetActive(true);
+            textoPerdeuPontos.GetComponent<Text>().text = GameController.pontos.ToString();
+            perdeuM = true;
+        }
 
 	}
 	public void perdeu() {
@@ -77,17 +69,18 @@ public class UIController : MonoBehaviour {
 		GameController.pontos = 0;
 		GameController.carros = 5;
 		Application.LoadLevel ("menu");
-		GameController.passou = false;
 		botaoSCarroNao.SetActive (false);
 		botaoSCarroSim.SetActive (false);
 		textoSCarro.SetActive (false);
 		
 	}
 	public void semCarro(){
-		painelPrincipal.SetActive (true);
-		textoSCarro.SetActive (true);
-		botaoSCarroNao.SetActive (true);
-		botaoSCarroSim.SetActive (true);
+       
+            painelPrincipal.SetActive(true);
+            textoSCarro.SetActive(true);
+            botaoSCarroNao.SetActive(true);
+            botaoSCarroSim.SetActive(true);
+            GameController.myStates = GameController.gameStates.normal;
 
 	    
 	}

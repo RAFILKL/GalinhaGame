@@ -6,11 +6,11 @@ public class GalinhaWalk : MonoBehaviour
 
 
     public int rand, rand2, rand3;
-    private int andar, ciscar, voar;
+    private int andar, ciscar, voar, acelerar;
     public Animator galinhaAnimator;
     public Animation galinhaAnimation;
     public float timer, vel, velSpeed;
-    public bool parada, jaPassou, especial;
+    public bool parada, especial;
     public static bool outraParada = false;
     public static int valorGalinha;
     public Vector3 velc = new Vector3(0, 0, 1);
@@ -24,10 +24,8 @@ public class GalinhaWalk : MonoBehaviour
 
     void Awake()
     {
-        jaPassou = false;
         parada = false;
         especial = false;
-        //outraParada = false;
         flySpeed = 0;
     }
     void Start()
@@ -35,6 +33,7 @@ public class GalinhaWalk : MonoBehaviour
         andar = Animator.StringToHash("andar");
         ciscar = Animator.StringToHash("ciscar");
         voar = Animator.StringToHash("voar");
+        acelerar = Animator.StringToHash("acelerar");
         //Ativa a animaçao da galinha para andar
         galinhaAnimator.SetBool(andar, true);
         galinhaAnimator.SetBool(ciscar, false);
@@ -223,6 +222,8 @@ public class GalinhaWalk : MonoBehaviour
     }
     IEnumerator AceleraGalinha()
     {
+        galinhaAnimator.SetBool(andar,false);
+        galinhaAnimator.SetBool(acelerar,true);
         velSpeed = vel;
         parada = true;
         for (int i = 1; i < 30; i++)
@@ -234,6 +235,8 @@ public class GalinhaWalk : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         parada = false;
+        galinhaAnimator.SetBool(andar, true);
+        galinhaAnimator.SetBool(acelerar, false);
     }
 
 
