@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0b18ea8e6623898408f1a3f11d141747
-timeCreated: 1452652648
+guid: cf6c04016926f324b82cefd930054943
+timeCreated: 1452903010
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -50,15 +50,14 @@ ModelImporter:
     7400002: Armature|Ciscar
     7400004: Armature|IDLE
     7400006: Armature|Velocidade
-    7400008: Armature|Cair
-    7400010: Armature|Voar
-    7400012: Armature|Menu
+    7400008: Armature|Voar
+    7400010: Armature|Cair
     9500000: //RootNode
     13700000: Crista
   materials:
     importMaterials: 1
-    materialName: 2
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -145,7 +144,7 @@ ModelImporter:
       name: Armature|Ciscar
       takeName: Armature|Ciscar
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 58
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -342,8 +341,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Armature|Voar
       takeName: Armature|Ciscar
-      firstFrame: 57
-      lastFrame: 93
+      firstFrame: 58
+      lastFrame: 95
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -416,72 +415,6 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Armature
-        weight: 1
-      - path: Armature/Bone
-        weight: 1
-      - path: Armature/Bone/Bone.001
-        weight: 1
-      - path: Armature/Bone/Bone.001/Bone.001_end
-        weight: 1
-      - path: Armature/Bone/Bone.002
-        weight: 1
-      - path: Armature/Bone/Bone.002/Bone.010
-        weight: 1
-      - path: Armature/Bone/Bone.002/Bone.010/Bone.010_end
-        weight: 1
-      - path: Armature/Bone/Bone.003
-        weight: 1
-      - path: Armature/Bone/Bone.003/Bone.009
-        weight: 1
-      - path: Armature/Bone/Bone.003/Bone.009/Bone.009_end
-        weight: 1
-      - path: Armature/Bone.004
-        weight: 1
-      - path: Armature/Bone.004/Bone.005
-        weight: 1
-      - path: Armature/Bone.004/Bone.005/Bone.005_end
-        weight: 1
-      - path: Armature/Bone.006
-        weight: 1
-      - path: Armature/Bone.006/Bone.007
-        weight: 1
-      - path: Armature/Bone.006/Bone.007/Bone.007_end
-        weight: 1
-      - path: Armature/Bone.008
-        weight: 1
-      - path: Armature/Bone.008/Bone.008_end
-        weight: 1
-      - path: Crista
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-    - serializedVersion: 16
-      name: Armature|Menu
-      takeName: Armature|Ciscar
-      firstFrame: 0
-      lastFrame: 130
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

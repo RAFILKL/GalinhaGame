@@ -193,13 +193,27 @@ public class GalinhaWalk : MonoBehaviour
         flySpeed = 0;
         for (int i = 1; i < 11; i++)
         {
-            flySpeed += i * 7;
+            flySpeed += i * 6;
             transform.Translate(Vector3.up * flySpeed * Time.deltaTime);
             yield return new WaitForSeconds(0.01f);
         }
+        
         yield return new WaitForSeconds(1f);
+        StartCoroutine(CaiGalinha());
         galinhaAnimator.SetBool(voar, false);
         galinhaAnimator.SetBool(andar, true);
+
+    }
+    IEnumerator CaiGalinha()
+    {
+        float caiSpeed = 0;
+        for (int i = 1; i < 4; i++)
+        {
+            caiSpeed += i * 6;
+            transform.Translate(Vector3.down * caiSpeed * Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
+        }
+  
     }
 
     public float flySpeed = 1f;
