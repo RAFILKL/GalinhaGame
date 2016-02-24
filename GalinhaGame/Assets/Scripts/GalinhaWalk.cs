@@ -85,7 +85,7 @@ public class GalinhaWalk : MonoBehaviour
 
     public void galinhaAnda()
     {
-        outraParada = false;
+		outraParada = false;
         switch (rand)
         {
             case 1:
@@ -170,11 +170,12 @@ public class GalinhaWalk : MonoBehaviour
                     Galinha.parada = false;
                   
                 }
+				parada = true;
             }
         }
 
         especial = true;
-        parada = true;
+        //parada = true;
     }
 
 
